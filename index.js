@@ -48,12 +48,12 @@ function runApp() {
 
     // prompts user for which employee they would like to add. Runs function depending on answer.
     function createTeam() {
-        inquirer.createPromptModule([{
+        inquirer.prompt([{
             type: 'list',
             message: 'What type of employee would you like to add to your team?',
             name: 'addEmployeePrompt',
             choices: ["Engineer", "Intern", "Manager", "Done"]
-        }]).then(function (userInput) {
+        }]).then(userInput => {
             switch (userInput.addEmployeePrompt) {
                 case "Engineer":
                     addEngineer();
